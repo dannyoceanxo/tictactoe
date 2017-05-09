@@ -1,14 +1,146 @@
-@import 'utility';
+ //@import 'utility';
 
-$base-text-size: 16px;
-$base-font-family: sans-serif;
+ //$base-text-size: 16px;
+ //$base-font-family: sans-serif;
 
-html {
-  text-size-adjust: 100%;
-}
+ //html {
+   //text-size-adjust: 100%;
+ //}
 
-body {
-  @include font-smoothing(on);
-  margin: 0;
-  font: $base-text-size / 1 $base-font-family;
-}
+ //body {
+   //@include font-smoothing(on);
+   //margin: 0;
+   //font: $base-text-size / 1 $base-font-family;
+   //background-color: #7ba4e5;
+ //}
+
+ //h1 {
+   //text-align: center;
+ //}
+
+ // table {
+   // text-align: center;
+ // }
+
+ //table {
+   //margin-top: 100%;
+
+   //td{
+     //padding: 55px;
+     //margin: 25px;
+     //border: 1px solid;
+     //border-radius: 35px;
+   //}
+ //}
+
+ //.square{
+//     width:100px;
+  //   height:100px;
+//     justify-content: center;
+ //}
+
+ //.v{
+  //  border-left:1px solid #000;
+    //border-right:1px solid #000;
+ //}
+
+ //.h{
+  //  border-top:1px solid #000;
+  //  border-bottom:1px solid #000;
+ //}
+
+
+ @import 'utility'
+
+ $base-text-size: 44px
+ $base-font-family: 'Ubuntu', sans-serif
+ $poa-red: #fd5c63
+ $poa-red-used: #c4464c
+ $primary-text-color: #222
+ $heading-font: 'Bungee Hairline', sans-serif
+
+
+ html
+   text-size-adjust: 100%
+
+ body
+   @include font-smoothing(on)
+   margin: 0
+   background-color: $poa-red
+   color: $primary-text-color
+   display: flex
+   align-items: center
+   flex-direction: column
+   min-height: 100%
+
+   &not(.modal) .overlay
+   // display: none
+   filter: blur(0)
+
+
+   .modal main
+     filter: blur(20px)
+     transition: filter 50ms ease
+
+
+     .overlay
+       position: fixed
+       top: 0
+       left: 0
+       right: 0
+       bottom: 0
+       display: flex
+       justify-content: center
+       align-items: center
+       background-color: rgba(0, 0, 0, 0.33)
+
+   h1
+     text-align: center
+     font: $base-text-size / 1 $heading-font
+
+   h2
+     font: 30px $base-font-family
+
+ table
+   border: 1px solid $primary-text-color
+   border-radius: 5px
+
+   tr
+     height: 100px
+     width: 40px
+
+   td
+     width: 100px
+     border: 1px solid $primary-text-color
+     font: $base-text-size / 1 $base-font-family
+     text-align: center
+
+     &[data-player=x]
+       background-color: $poa-red-used
+       &::before
+         content: 'X'
+
+     &[data-player=o]
+       background-color: $poa-red-used
+       &::before
+         content: 'O'
+
+ .dialog
+   background-color: hsl(200, 33%, 90%)
+   color: hsl(200, 5%, 25%)
+   border: none
+   border-radius: 5px
+   text-align: center
+
+
+   h3
+     font-size: 2em
+     margin: 1em
+
+
+   button
+     padding: 0.4em 0.5em 0.3em
+     margin: 1em
+     font-size: 1.5em
+     line-height: 1.2em
+     font-family: 'Eczar', serif
